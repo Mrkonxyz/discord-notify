@@ -1,0 +1,22 @@
+name: Develop
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/deploy.yml"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # - name: Discord notification (pre-build)
+      #   uses: appleboy/discord-action@master
+      #   with:
+      #     webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+      #     webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+      #     args: "[Develop] APK is being built! Hold tight 🤩"
+      #     color: "#fed330"

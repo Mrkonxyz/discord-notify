@@ -17,5 +17,3 @@ jobs:
           DISCORD_USERNAME: GITHUB
           DISCORD_WEBHOOK: https://discord.com/api/webhooks/1093761496485478532/eAMJT--uoPhXphxIVp2zLukA8cwOHaCxQvdp7a7aiGJQLSBZIdMsgJfDzDWz6YQX3k2C
         uses: Ilshidur/action-discord@master
-        with:
-          content: "{{ EVENT_PAYLOAD.repository.full_name }}"

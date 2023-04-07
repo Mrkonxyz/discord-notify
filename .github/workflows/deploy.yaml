@@ -12,10 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # - name: Discord notification (pre-build)
-      #   uses: appleboy/discord-action@master
-      #   with:
-      #     webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
-      #     webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
-      #     args: "[Develop] APK is being built! Hold tight 🤩"
-      #     color: "#fed330"
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/1093761496485478532/eAMJT--uoPhXphxIVp2zLukA8cwOHaCxQvdp7a7aiGJQLSBZIdMsgJfDzDWz6YQX3k2C
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed."

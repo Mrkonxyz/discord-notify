@@ -2,16 +2,15 @@ name: Develop
 
 on:
   push:
-    branches: [main]
-    paths:
-      - ".github/workflows/deploy.yml"
+    branches: ["main"]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # - name: Discord notification (pre-build)
       #   uses: appleboy/discord-action@master

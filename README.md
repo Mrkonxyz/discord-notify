@@ -1,1 +1,2 @@
+Hello
 # discord-notify
